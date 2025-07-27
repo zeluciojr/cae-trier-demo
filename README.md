@@ -3,6 +3,8 @@ This repository holds a ``Java`` project with the purpose of showing how to use 
 
 Examples in this project:
 
+<br>
+
 ### A Healthy Action Execution
 A normal action that doesn't throw being wrapped and executed by the ``Trier`` object.
 
@@ -14,6 +16,8 @@ public static void runExampleOfAHealthyExecution(){
     System.out.println("Yay: " + result);
 }
 ```
+
+<br>
 
 ### An Unhealthy Action Execution
 The same normal action being executed but this time with a bad input which makes it throw ``NullPointerException``, triggering the ``Trier`` to call the ``UnexpectedExceptionHandler`` provided.
@@ -31,6 +35,8 @@ public static void runExampleOfAnUnhealthyExecution(){
 }
 ```
 
+<br>
+
 ### An Intermittent Action Execution
 An action the intermittently throws an exception to showcase how the retry mechanism works with the ``Trier`` component.
 
@@ -43,6 +49,8 @@ private static void runExampleOfIntermittentActionWithRetry() {
         .execute();
 }
 ```
+
+<br>
 
 ### An Unhealthy Action Execution With Retries
 An action that will always throw to showcase how the retry mechanism works when it reaches an exhaustion state.
