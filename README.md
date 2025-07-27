@@ -3,7 +3,7 @@ This repository holds a ``Java`` project with the purpose of showing how to use 
 
 Examples in this project:
 
-## A Healthy Action Execution
+### A Healthy Action Execution
 A normal action that doesn't throw being wrapped and executed by the ``Trier`` object.
 
 ```java
@@ -15,7 +15,7 @@ public static void runExampleOfAHealthyExecution(){
 }
 ```
 
-## An Unhealthy Action Execution
+### An Unhealthy Action Execution
 The same normal action being executed but this time with a bad input which makes it throw ``NullPointerException``, triggering the ``Trier`` to call the ``UnexpectedExceptionHandler`` provided.
 
 ```java
@@ -31,7 +31,7 @@ public static void runExampleOfAnUnhealthyExecution(){
 }
 ```
 
-## An Intermittent Action Execution
+### An Intermittent Action Execution
 An action the intermittently throws an exception to showcase how the retry mechanism works with the ``Trier`` component.
 
 ```java
@@ -44,7 +44,7 @@ private static void runExampleOfIntermittentActionWithRetry() {
 }
 ```
 
-## An Unhealthy Action Execution With Retries
+### An Unhealthy Action Execution With Retries
 An action that will always throw to showcase how the retry mechanism works when it reaches an exhaustion state.
 
 ```java
