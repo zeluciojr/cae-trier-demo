@@ -1,6 +1,8 @@
 # cae-trier-demo
 This repository holds a ``Java`` project with the purpose of showing how to use the ``Trier`` component.
 
+<br>
+
 Examples in this project:
 
 <br>
