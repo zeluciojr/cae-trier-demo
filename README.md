@@ -5,6 +5,17 @@ Examples in this project:
 
 <br>
 
+### Providing A Retry Subscriber
+Providing to the ``Trier`` ecosystem a custom instance of ``RetrySubscriber`` so everytime a retry happens it will be triggered.
+
+```java
+private static void subscribeRetrySubscribers() {
+    RetryNotifier.SINGLETON.subscribe(new CustomRetrySubscriber());
+}
+```
+
+<br>
+
 ### A Healthy Action Execution
 A normal action that doesn't throw being wrapped and executed by the ``Trier`` object.
 

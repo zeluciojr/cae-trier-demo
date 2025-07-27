@@ -4,6 +4,7 @@ import com.cae.mapped_exceptions.MappedException;
 import com.cae.trier.Trier;
 import com.cae.trier.retry.NoRetriesLeftException;
 import com.cae.trier.retry.OnExhaustion;
+import com.cae.trier.retry.RetryNotifier;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,10 +13,20 @@ import static com.zeluciojr.OddBomb.OddNumberMappedException;
 public class Demo {
 
     public static void main(String[] args) {
+        Demo.subscribeRetrySubscribers();
         Demo.runExampleOfAHealthyExecution();
         Demo.runExampleOfAnUnhealthyExecution();
         Demo.runExampleOfIntermittentActionWithRetry();
         Demo.runExampleOfAnUnhealthyExecutionWithRetry();
+    }
+
+    /**
+     * It will provide the instance of CustomRetrySubscriber as an interested in receiving
+     * notifications everytime a new one happens. Internally it will simply print the notification content
+     * to the console.
+     */
+    private static void subscribeRetrySubscribers() {
+        RetryNotifier.SINGLETON.subscribe(new CustomRetrySubscriber());
     }
 
     /**
