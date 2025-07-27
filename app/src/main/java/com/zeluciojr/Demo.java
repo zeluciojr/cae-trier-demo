@@ -36,7 +36,7 @@ public class Demo {
     }
 
     /**
-     * Modifies the RetryNotifier Thread Pool used under the hood everytime a notification is emitted.
+     * Modifies the RetryNotifier Thread Pool which is used under the hood everytime a notification is emitted.
      */
     private static void fineTuneRetryNotifierThreadPool() {
         RetryNotifierThreadPoolProvider.SINGLETON
