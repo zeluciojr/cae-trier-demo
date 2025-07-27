@@ -3,7 +3,7 @@ This repository holds a ``Java`` project with the purpose of showing how to use 
 
 <br>
 
-While it's best to view the ``Demo`` class directly to fully grasp the examples, a brief summary is provided below:
+💡 While it's best to view the ``Demo`` class directly to fully grasp the examples, a brief summary is provided below:
 
 ### Providing A Retry Subscriber
 Providing to the ``Trier`` ecosystem a custom instance of ``RetrySubscriber`` so everytime a retry happens it will be triggered.
