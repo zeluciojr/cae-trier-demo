@@ -7,7 +7,7 @@ public class CustomRetrySubscriber implements RetrySubscriber {
 
     @Override
     public void receiveRetryNotification(RetryNotification retryNotification) {
-        System.out.println("New retry notification. " + retryNotification);
+        System.out.println(Thread.currentThread().getName() + ": new retry notification. " + retryNotification);
     }
 
 }

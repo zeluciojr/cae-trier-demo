@@ -5,6 +5,7 @@ import com.cae.trier.Trier;
 import com.cae.trier.retry.NoRetriesLeftException;
 import com.cae.trier.retry.OnExhaustion;
 import com.cae.trier.retry.RetryNotifier;
+import com.cae.trier.retry.RetryNotifierThreadPoolProvider;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,19 +15,35 @@ public class Demo {
 
     public static void main(String[] args) {
         Demo.subscribeRetrySubscribers();
+        Demo.fineTuneRetryNotifierThreadPool();
         Demo.runExampleOfAHealthyExecution();
         Demo.runExampleOfAnUnhealthyExecution();
         Demo.runExampleOfIntermittentActionWithRetry();
         Demo.runExampleOfAnUnhealthyExecutionWithRetry();
+        System.exit(0);
     }
 
     /**
      * It will provide the instance of CustomRetrySubscriber as an interested in receiving
      * notifications everytime a new one happens. Internally it will simply print the notification content
      * to the console.
+     * <p>
+     * Each notification happens in a non-blocking way: the RetryNotifier uses its own Thread Pool.
+     * </p>
      */
     private static void subscribeRetrySubscribers() {
         RetryNotifier.SINGLETON.subscribe(new CustomRetrySubscriber());
+    }
+
+    /**
+     * Modifies the RetryNotifier Thread Pool used under the hood everytime a notification is emitted.
+     */
+    private static void fineTuneRetryNotifierThreadPool() {
+        RetryNotifierThreadPoolProvider.SINGLETON
+            .setMinSize(2)
+            .setMaxSize(10)
+            .setQueueCapacity(5)
+            .setPoolName("CaeTrierDemo");
     }
 
     /**
