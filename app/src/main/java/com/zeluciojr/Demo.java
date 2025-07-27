@@ -25,7 +25,7 @@ public class Demo {
 
     /**
      * It will provide the instance of CustomRetrySubscriber as an interested in receiving
-     * notifications everytime a new one happens. Internally it will simply print the notification content
+     * notifications everytime a new retry happens. Internally it will simply print the notification content
      * to the console.
      * <p>
      * Each notification happens in a non-blocking way: the RetryNotifier uses its own Thread Pool.
