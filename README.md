@@ -5,8 +5,6 @@ This repository holds a ``Java`` project with the purpose of showing how to use 
 
 Examples in this project:
 
-<br>
-
 ### Providing A Retry Subscriber
 Providing to the ``Trier`` ecosystem a custom instance of ``RetrySubscriber`` so everytime a retry happens it will be triggered.
 
