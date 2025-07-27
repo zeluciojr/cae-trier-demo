@@ -16,6 +16,21 @@ private static void subscribeRetrySubscribers() {
 
 <br>
 
+### Fine-Tuning the ``RetryNotifier`` Thread Pool
+Providing a custom setup for the Thread Pool used by the RetryNotifier
+
+```java
+private static void fineTuneRetryNotifierThreadPool() {
+    RetryNotifierThreadPoolProvider.SINGLETON
+        .setMinSize(2)
+        .setMaxSize(10)
+        .setQueueCapacity(5)
+        .setPoolName("CaeTrierDemo");
+}
+```
+
+<br>
+
 ### A Healthy Action Execution
 A normal action that doesn't throw being wrapped and executed by the ``Trier`` object.
 
